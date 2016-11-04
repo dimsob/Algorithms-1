@@ -38,21 +38,20 @@ using namespace std;
  };
 
  int main() {
-
- 	//Expression that is to be evaluated
- 	string expression;
+	
+	char expression[10];
 
  	cout << "Enter an expression" << endl;
  	cin >> expression;
 
- 	//Stack to store operator
  	Stack stack;
 
- 	for (char token : expression) {
-	 	if (token == '+' || token == '-'){
-
+ 	for (int i = 0; i < sizeof(expression); i++) {
+ 		char token = expression[i];
+ 		if (token == '+' || token == '-'){
+			cout << "Low precedence operator" << endl;
  		} else if (token == '/' || token == '*') {
-
+			cout << "High precedence operator" << endl;
  		} else {
  			cout << "Operand" << endl;
  		}
